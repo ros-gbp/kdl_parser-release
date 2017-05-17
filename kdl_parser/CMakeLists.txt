@@ -16,6 +16,8 @@ include_directories(include ${orocos_kdl_INCLUDE_DIRS} ${TinyXML_INCLUDE_DIRS} $
 link_directories(${catkin_LIBRARY_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
+add_compile_options(-std=c++11)
+
 catkin_package(
   LIBRARIES ${PROJECT_NAME} ${orocos_kdl_LIBRARIES}
   INCLUDE_DIRS include
