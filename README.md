@@ -1,3 +1,28 @@
+## kdl_parser (lunar) - 1.12.10-0
+
+The packages in the `kdl_parser` repository were released into the `lunar` distro by running `/usr/bin/bloom-release --rosdistro lunar --track lunar kdl_parser` on `Wed, 17 May 2017 22:29:12 -0000`
+
+These packages were released:
+- `kdl_parser`
+- `kdl_parser_py`
+
+Version of package(s) in repository `kdl_parser`:
+
+- upstream repository: https://github.com/ros/kdl_parser.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `1.12.10-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.26`
+- catkin_pkg version: `0.3.1`
+- rosdep version: `0.11.5`
+- rosdistro version: `0.6.2`
+- vcstools version: `0.1.39`
+
+
 ## kdl_parser (kinetic) - 1.12.10-0
 
 The packages in the `kdl_parser` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release --rosdistro kinetic --track kinetic kdl_parser` on `Wed, 17 May 2017 22:26:23 -0000`
