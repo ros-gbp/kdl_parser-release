@@ -1,0 +1,13 @@
+Source: ros-lunar-kdl-parser
+Section: misc
+Priority: extra
+Maintainer: Chris Lalancette <clalancette@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), libtinyxml-dev, liburdfdom-headers-dev, ros-lunar-catkin (>= 0.5.68), ros-lunar-cmake-modules, ros-lunar-orocos-kdl (>= 1.3.0), ros-lunar-rosconsole, ros-lunar-roscpp, ros-lunar-rostest, ros-lunar-urdf
+Homepage: http://ros.org/wiki/kdl_parser
+Standards-Version: 3.9.2
+
+Package: ros-lunar-kdl-parser
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtinyxml-dev, liburdfdom-headers-dev, ros-lunar-orocos-kdl (>= 1.3.0), ros-lunar-rosconsole, ros-lunar-urdf
+Description: The Kinematics and Dynamics Library (KDL) defines a tree structure to represent the kinematic and dynamic parameters of a robot mechanism.
+ kdl_parser provides tools to construct a KDL tree from an XML robot representation in URDF.
