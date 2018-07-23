@@ -1,3 +1,28 @@
+## kdl_parser (indigo) - 1.11.15-0
+
+The packages in the `kdl_parser` repository were released into the `indigo` distro by running `/usr/bin/bloom-release kdl_parser --track indigo --rosdistro indigo` on `Mon, 23 Jul 2018 22:58:48 -0000`
+
+These packages were released:
+- `kdl_parser`
+- `kdl_parser_py`
+
+Version of package(s) in repository `kdl_parser`:
+
+- upstream repository: https://github.com/ros/kdl_parser.git
+- release repository: https://github.com/ros-gbp/kdl_parser-release.git
+- rosdistro version: `1.11.14-0`
+- old version: `1.11.14-0`
+- new version: `1.11.15-0`
+
+Versions of tools used:
+
+- bloom version: `0.6.6`
+- catkin_pkg version: `0.4.6`
+- rosdep version: `0.12.2`
+- rosdistro version: `0.6.8`
+- vcstools version: `0.1.40`
+
+
 ## kdl_parser (kinetic) - 1.12.11-0
 
 The packages in the `kdl_parser` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release kdl_parser --track kinetic --rosdistro kinetic` on `Mon, 23 Jul 2018 22:42:52 -0000`
