@@ -2,14 +2,9 @@
 Changelog for package kdl_parser_py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.13.1 (2018-07-23)
--------------------
-* Remove the declaration of a library from kdl_parser_py. (`#14 <https://github.com/ros/kdl_parser/issues/14>`_)
-* Remove unused kdl_parser_py.urdf. (`#17 <https://github.com/ros/kdl_parser/issues/17>`_)
-* Contributors: Chris Lalancette
-
-1.13.0 (2018-04-05)
--------------------
+1.12.11 (2018-07-23)
+--------------------
+* Remove unused kdl_parser_py.urdf. (`#18 <https://github.com/ros/kdl_parser/issues/18>`_)
 * Make rostest a test_depend (`#3 <https://github.com/ros/kdl_parser/issues/3>`_)
 * update links now that this is in its own repo
 * Contributors: Chris Lalancette, Mikael Arguedas

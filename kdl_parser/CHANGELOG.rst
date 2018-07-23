@@ -2,18 +2,12 @@
 Changelog for package kdl_parser
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.13.1 (2018-07-23)
--------------------
-* Fix up missing link tags in some XML files. (`#15 <https://github.com/ros/kdl_parser/issues/15>`_)
-* Contributors: Chris Lalancette
-
-1.13.0 (2018-04-05)
--------------------
-* kdl_parser: switch from TinyXML to TinyXML2 (`#4 <https://github.com/ros/kdl_parser/issues/4>`_)
+1.12.11 (2018-07-23)
+--------------------
 * Style fixes from ros2 (`#11 <https://github.com/ros/kdl_parser/issues/11>`_)
 * Make rostest a test_depend (`#3 <https://github.com/ros/kdl_parser/issues/3>`_)
 * update links now that this is in its own repo
-* Contributors: Chris Lalancette, Dmitry Rozhkov, Mikael Arguedas
+* Contributors: Chris Lalancette, Mikael Arguedas
 
 1.12.10 (2017-05-17)
 --------------------
