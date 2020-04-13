@@ -1,14 +1,11 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.2)
 
 project(kdl_parser_py)
 
-find_package(catkin REQUIRED
-  COMPONENTS urdf
-)
+find_package(catkin REQUIRED)
 
 catkin_package(
-  LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS urdf
+  CATKIN_DEPENDS urdfdom_py
 )
 
 catkin_python_setup()

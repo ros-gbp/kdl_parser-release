@@ -39,14 +39,27 @@
 #include <string>
 #include <vector>
 
+#include <urdf_model/model.h>
+#include <urdf_parser/urdf_parser.h>
+
+#include <kdl/frames_io.hpp>
+
+#ifdef HAS_ROS
+#include <ros/console.h>
+#else
+// forward ROS warnings and errors to stderr
+#define ROS_DEBUG(...) fprintf(stdout, __VA_ARGS__);
+#define ROS_ERROR(...) fprintf(stderr, __VA_ARGS__);
+#define ROS_WARN(...) fprintf(stderr, __VA_ARGS__);
+#endif
+
+#ifdef HAS_URDF
 #include <urdf/model.h>
 #include <urdf/urdfdom_compatibility.h>
-#include <kdl/frames_io.hpp>
-#include <ros/console.h>
+#endif
 
 namespace kdl_parser
 {
-
 // construct vector
 KDL::Vector toKdl(urdf::Vector3 v)
 {
@@ -87,8 +100,7 @@ KDL::Joint toKdl(urdf::JointSharedPtr jnt)
         return KDL::Joint(jnt->name, F_parent_jnt.p, F_parent_jnt.M * axis, KDL::Joint::TransAxis);
       }
     default: {
-        ROS_WARN("Converting unknown joint type of joint '%s' into a fixed joint",
-          jnt->name.c_str());
+        ROS_WARN("Converting unknown joint type of joint '%s' into a fixed joint", jnt->name.c_str());
         return KDL::Joint(jnt->name, KDL::Joint::None);
       }
   }
@@ -157,41 +169,63 @@ bool addChildrenToTree(urdf::LinkConstSharedPtr root, KDL::Tree & tree)
   return true;
 }
 
-
 bool treeFromFile(const std::string & file, KDL::Tree & tree)
 {
-  TiXmlDocument urdf_xml;
-  urdf_xml.LoadFile(file);
-  return treeFromXml(&urdf_xml, tree);
+  const urdf::ModelInterfaceSharedPtr robot_model = urdf::parseURDFFile(file);
+  return kdl_parser::treeFromUrdfModel(*robot_model, tree);
 }
+
 
 bool treeFromParam(const std::string & param, KDL::Tree & tree)
 {
+#if defined(HAS_ROS) && defined(HAS_URDF)
   urdf::Model robot_model;
   if (!robot_model.initParam(param)){
     ROS_ERROR("Could not generate robot model");
     return false;
   }
   return treeFromUrdfModel(robot_model, tree);
+#else
+  return false;
+#endif
 }
+
 
 bool treeFromString(const std::string & xml, KDL::Tree & tree)
 {
-  TiXmlDocument urdf_xml;
-  urdf_xml.Parse(xml.c_str());
-  return treeFromXml(&urdf_xml, tree);
+  const urdf::ModelInterfaceSharedPtr robot_model = urdf::parseURDF(xml);
+  if (!robot_model) {
+    ROS_ERROR("Could not generate robot model");
+    return false;
+  }
+  return kdl_parser::treeFromUrdfModel(*robot_model, tree);
+}
+
+bool treeFromXml(const tinyxml2::XMLDocument * xml_doc, KDL::Tree & tree)
+{
+  if (!xml_doc) {
+    ROS_ERROR("Could not parse the xml document");
+    return false;
+  }
+
+  tinyxml2::XMLPrinter printer;
+  xml_doc->Print(&printer);
+
+  return treeFromString(printer.CStr(), tree);
 }
 
 bool treeFromXml(TiXmlDocument * xml_doc, KDL::Tree & tree)
 {
-  urdf::Model robot_model;
-  if (!robot_model.initXml(xml_doc)) {
-    ROS_ERROR("Could not generate robot model");
+  if (!xml_doc) {
+    ROS_ERROR("Could not parse the xml document");
     return false;
   }
-  return treeFromUrdfModel(robot_model, tree);
-}
 
+  std::stringstream ss;
+  ss << *xml_doc;
+
+  return treeFromString(ss.str(), tree);
+}
 
 bool treeFromUrdfModel(const urdf::ModelInterface & robot_model, KDL::Tree & tree)
 {

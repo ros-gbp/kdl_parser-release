@@ -49,9 +49,11 @@
   #ifdef __GNUC__
     #define KDL_PARSER_EXPORT __attribute__ ((dllexport))
     #define KDL_PARSER_IMPORT __attribute__ ((dllimport))
+    #define KDL_PARSER_DEPRECATED(msg) __attribute__((deprecated(msg)))
   #else
     #define KDL_PARSER_EXPORT __declspec(dllexport)
     #define KDL_PARSER_IMPORT __declspec(dllimport)
+    #define KDL_PARSER_DEPRECATED(msg) __declspec(deprecated(msg))
   #endif
   #ifdef KDL_PARSER_BUILDING_DLL
     #define KDL_PARSER_PUBLIC KDL_PARSER_EXPORT
@@ -71,6 +73,7 @@
     #define KDL_PARSER_LOCAL
   #endif
   #define KDL_PARSER_PUBLIC_TYPE
+  #define KDL_PARSER_DEPRECATED(msg) __attribute__((deprecated(msg)))
 #endif
 
 #endif  // KDL_PARSER__VISIBILITY_CONTROL_HPP_
