@@ -1,3 +1,26 @@
+## kdl_parser (noetic) - 1.14.0-1
+
+The packages in the `kdl_parser` repository were released into the `noetic` distro by running `/usr/bin/bloom-release -r noetic -t noetic kdl_parser` on `Mon, 13 Apr 2020 18:12:39 -0000`
+
+The `kdl_parser` package was released.
+
+Version of package(s) in repository `kdl_parser`:
+
+- upstream repository: https://github.com/ros/kdl_parser.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `1.14.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.9.3`
+- catkin_pkg version: `0.4.16`
+- rosdep version: `0.18.0`
+- rosdistro version: `0.8.0`
+- vcstools version: `0.1.42`
+
+
 ## kdl_parser (lunar) - 1.12.11-0
 
 The packages in the `kdl_parser` repository were released into the `lunar` distro by running `/usr/bin/bloom-release kdl_parser --track lunar --rosdistro lunar` on `Mon, 23 Jul 2018 23:01:18 -0000`
