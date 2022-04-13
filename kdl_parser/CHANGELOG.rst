@@ -2,14 +2,10 @@
 Changelog for package kdl_parser
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.14.1 (2020-08-24)
+1.13.3 (2022-04-13)
 -------------------
-
-1.14.0 (2020-04-13)
--------------------
-* Used keys for Orocos (`#38 <https://github.com/ros/kdl_parser/issues/38>`_)
 * Set C++ standard to 14 (`#37 <https://github.com/ros/kdl_parser/issues/37>`_)
-* Contributors: Alejandro Hernández Cordero, James Xu, Shane Loretz
+* Contributors: Shane Loretz
 
 1.13.1 (2018-07-23)
 -------------------
