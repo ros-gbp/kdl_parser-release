@@ -2,6 +2,9 @@
 Changelog for package kdl_parser_py
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.13.3 (2022-04-13)
+-------------------
+
 1.13.1 (2018-07-23)
 -------------------
 * Remove the declaration of a library from kdl_parser_py. (`#14 <https://github.com/ros/kdl_parser/issues/14>`_)
